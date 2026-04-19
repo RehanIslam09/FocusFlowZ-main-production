@@ -11,12 +11,17 @@ const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ClerkProvider publishableKey={clerkPubKey}>
+    <ClerkProvider
+      publishableKey={clerkPubKey}
+      allowedRedirectOrigins={['*']}
+      afterSignOutUrl="/"
+      signInUrl="/"
+    >
       <BrowserRouter>
         <ThemeProvider>
           <App />
         </ThemeProvider>
       </BrowserRouter>
     </ClerkProvider>
-  </StrictMode>,
+  </StrictMode>
 );
