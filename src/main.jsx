@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { ClerkProvider, useAuth } from '@clerk/clerk-react';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeProvider';
-import PremiumLoader from './components/PremiumLoader'; // adjust path
+import PremiumLoader from './components/PremiumLoader';
 
 import './index.css';
 import App from './App.jsx';
@@ -23,7 +23,7 @@ function ClerkLoadedApp() {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ClerkProvider publishableKey={clerkPubKey} allowedRedirectOrigins={['*']}>
+    <ClerkProvider publishableKey={clerkPubKey}>
       <BrowserRouter>
         <ThemeProvider>
           <ClerkLoadedApp />
